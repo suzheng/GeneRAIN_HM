@@ -1,0 +1,13 @@
+
+This table presents embedding similarities of human and mouse homologs, derived from models trained on gene expression data, and also includes similarities of their CDS DNA sequences.
+
+Column descriptions:
+
+Human gene: Symbol of the human gene in the gene pair.
+Mouse gene: Symbol of the mouse gene in the gene pair.
+Embedding similarity: Quantitative measure of the closeness of gene embeddings between human and mouse homologs. This is the average of 'Emb. simi. from Supervised align.' and 'Emb. simi. from GPT shared emb. + Supervised align.'.
+Human homolog rank in mouse: Ranking position of the human gene's homolog among all mouse genes based on embedding similarity.
+Mouse homolog rank in human: Ranking position of the mouse gene's homolog among all human genes based on embedding similarity.
+DNA alignment score: The highest alignment score among transcripts of a human gene and its best-matched transcripts in its mouse homolog.
+Mean transcript alignment score: The average alignment score across transcripts of a human gene and their corresponding best matches in its mouse homolog.
+Group: Categorization of gene pairs based on DNA sequence similarity and RNA embedding similarity.

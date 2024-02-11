@@ -1,0 +1,11 @@
+
+This table contains information on DNA characteristics in the 1kb regions downstream of the transcription termination sites (TTS) of homolog gene pairs, as well as random gene pairs.
+
+Column descriptions:
+
+Human gene: Symbol of the human gene in the gene pair.
+Mouse gene: Symbol of the mouse gene in the gene pair.
+GC content in human (%): Percentage of guanine and cytosine in the DNA sequence of the human gene.
+GC content in mouse (%): Percentage of guanine and cytosine in the DNA sequence of the mouse gene.
+DNA alignment score: The highest alignment score among transcripts of a human gene and its best-matched transcripts in its mouse homolog.
+Mean transcript alignment score: The average alignment score across transcripts of a human gene and their corresponding best matches in its mouse homolog.

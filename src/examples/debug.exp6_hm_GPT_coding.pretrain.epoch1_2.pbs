@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#PBS -l ncpus=12
+#PBS -l ngpus=1
+#PBS -l mem=95GB
+#PBS -l jobfs=10GB
+#PBS -q gpuvolta
+#PBS -P yr31
+#PBS -l walltime=1:00:00
+#PBS -l storage=gdata/yr31+scratch/yr31
+#PBS -l wd
+
+# Label for the training task
+label=exp6_hm_GPT_coding
+
+# Please replace YOUR_PROJECT_PATH with your actually project path
+# Change param config json if you want to train other models or want other hyper-parameters
+YOUR_PROJECT_PATH=/path/to/your/project/
+param_file=$YOUR_PROJECT_PATH/jsons/exp6_hm_GPT_coding.param_config.json
+echo "param file used: $param_file"
+
+# Activate your virtual env if necessary
+source $YOUR_PROJECT_PATH/generain_hm/bin/activate
+module add python3
+
+# Please replace YOUR_PROJECT_PATH with your actually project path
+##!!! Set environmental variable SPECIES=Mouse if your are training mouse or human-mouse model.
+##!!! Do NOT set SPECIES=Mouse if your are training human only model
+
+export RUNNING_MODE=debug PARAM_JSON_FILE=$param_file SPECIES=Mouse && torchrun --nnodes=1 --nproc_per_node=1 --rdzv_id=100 --rdzv_backend=c10d --rdzv_endpoint=localhost:29400 $YOUR_PROJECT_PATH/src/train/pretrain.py --epoch_from 1 --epoch_to 2 --exp_label $label

@@ -1,0 +1,31 @@
+This table presents information on homolog gene pairs between human and mouse, as well as random gene pairs for comparative analysis. It includes details of embedding similarities derived from GPT models trained on gene expression data, and characteristics at the DNA level, such as CDS DNA sequence similarity, GC content, and transcript metrics. Additionally, the table includes information on the associations of gene pairs with phenotypes and diseases.
+
+Column descriptions:
+Gene pair group: Group of gene pairs, homolog or random gene pair.
+Human gene: Symbol of the human gene in the gene pair.
+Mouse gene: Symbol of the mouse gene in the gene pair.
+Human homolog rank in mouse: Ranking position of the human gene's homolog among all mouse genes based on embedding similarity.
+Mouse homolog rank in human: Ranking position of the mouse gene's homolog among all human genes based on embedding similarity.
+Embedding similarity: Quantitative measure of the closeness of gene embeddings between human and mouse homologs. This is the average of 'Emb. simi. from Supervised align.' and 'Emb. simi. from GPT shared emb. + Supervised align.'.
+Num of shared associated phenotypes in HMD phenotype associations: Count of high-level mammalian phenotypes commonly associated with both genes in a gene pair, derived from the HMD Human-Mouse Phenotype dataset.
+List of shared associated phenotypes in HMD phenotype associations: List of high-level mammalian phenotypes commonly associated with both genes in a gene pair, derived from the HMD Human-Mouse Phenotype dataset.
+Num of shared associated diseases in MGI disease-model analysis: Count of diseases commonly associated with both genes in a gene pair, derived from the MGI Disease-Model dataset.
+List of shared associated diseases in MGI disease-model analysis: List of diseases commonly associated with both genes in a gene pair, derived from the MGI Disease-Model dataset.
+Num of shared associated diseases in Alliance disease original associations: Count of diseases commonly associated with both genes in a gene pair, derived from the original DISEASE-ALLIANCE dataset.
+Num of shared associated diseases in Alliance disease filtered associations: Count of diseases commonly associated with both genes in a gene pair, derived from the filtered DISEASE-ALLIANCE dataset.
+List of shared associated diseases in Alliance disease original associations: List of diseases commonly associated with both genes in a gene pair, derived from the original DISEASE-ALLIANCE dataset.
+List of shared associated diseases in Alliance disease filtered associations: List of diseases commonly associated with both genes in a gene pair, derived from the filtered DISEASE-ALLIANCE dataset.
+GC content in human (%): Percentage of guanine and cytosine in the DNA sequence of the human gene.
+GC content in mouse (%): Percentage of guanine and cytosine in the DNA sequence of the mouse gene.
+Num of transcripts in human: Number of different transcripts identified for the human gene.
+DNA alignment score: The highest alignment score among transcripts of a human gene and its best-matched transcripts in its mouse homolog.
+Mean transcript alignment score: The average alignment score across transcripts of a human gene and their corresponding best matches in its mouse homolog.
+Num of transcripts in mouse: Number of different transcripts identified for the mouse gene.
+Mean CDS length in human (bp): Average length of coding sequence of the human gene, measured in base pairs (bp).
+Mean CDS length in mouse (bp): Average length of coding sequence of the mouse gene, measured in base pairs (bp).
+Emb. simi. from Supervised align.: Embedding similarity derived from a supervised alignment method.
+Emb. simi. from GPT shared emb. + Supervised align.: Embedding similarity obtained from the GPT shared embedding + supervised alignment method.
+Group: Categorization of gene pairs based on DNA sequence similarity and RNA embedding similarity.
+Difference in transcript number between human and mouse genes: The numerical difference in the count of transcripts between human and mouse genes in each gene pair.
+Difference in transcript length between human and mouse genes (bp): The difference in the average transcript length between human and mouse genes, measured in base pairs (bp).
+Difference in GC% between human and mouse genes: The difference in GC content percentage between human and mouse genes in each gene pair.
