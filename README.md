@@ -2,13 +2,12 @@
 
 ## About GeneRAIN Human-Mouse
 
-GeneRAIN models, based on BERT and GPT Transformer architectures, are trained on an extensive dataset of 410K human bulk RNA-seq samples. These models focus on analyzing gene network correlations and developing robust gene representations. By leveraging bulk RNA-seq data, GeneRAIN distinguishes itself from conventional models that primarily use single-cell RNA-seq data. The combination of varied model architectures with the 'Binning-By-Gene' normalization method allows GeneRAIN to effectively decode a broad range of biological information. This repository serves as a platform providing the necessary code and instruction for dataset preparation, training of the GeneRAIN models, and their application to new samples, utilizing this specialized normalization technique.
+This GitHub repository presents our study on gene expression in humans and mice, utilizing deep learning on 410K human and 366K mouse bulk RNA-seq samples to investigate gene function and disease associations across species. Our research leverages our Transformer-based models [GeneRAIN] (https://github.com/suzheng/GeneRAIN) and cross-species gene embedding alignment to analyze RNA-level similarities between human and mouse genes, offering new insights into their evolutionary and functional relationships. This project enhances our understanding of mouse genes in biomedical research, providing a novel methodology for cross-species omics analysis.
 
 ## Repository Contents
-- **Data Preparation Scripts**: Tools to prepare and preprocess the dataset for training the GeneRAIN models.
+
 - **Model Training Framework**: Scripts and guidelines for training the GeneRAIN models on the prepared datasets.
-- **Normalization Tools**: Implementation of the 'Binning-By-Gene' normalization method for processing new expression data and preparing it for model input.
-- **Utilization of Model Checkpoints**: Using pre-trained models and checkpoints for applying GeneRAIN to new datasets.
+- **Statistical analyses**: Notebooks to perform statistical analysis and generate the figures and tables in the paper. 
 
 
 ## Installation and Setup
@@ -56,10 +55,10 @@ After installation, the package and its modules can be imported into other Pytho
 
 
 5. **Prepare the Data**:
-	- Download the data from Zenodo. Refer to the data [README file](data/README.md) in the data directory for descriptions and details of the files.
+	- Download the data from figshare. Refer to the data [README file](data/README.md) in the data directory for descriptions and details of the files.
 	- Extract the downloaded `tar.gz` file.
-	- Move the downloaded `human_gene_v2.2_with_zero_expr_genes_bin_tot2000_final_gene2vec_chunk_*.npy` files to `data/external/ARCHS/normalize_each_gene/` in the extracted folder.
-	- Download the ARCHS4 [`human_gene_v2.2.h5`](https://maayanlab.cloud/archs4/download.html) file, and move the `human_gene_v2.2.h5` file to folder `data/external/ARCHS/`
+	- Download the ARCHS4 [`human_gene_v2.2.h5`](https://maayanlab.cloud/archs4/download.html) and [`mouse_gene_v2.2.h5`](https://maayanlab.cloud/archs4/download.html) files, and move them to folder `data/external/ARCHS/`
+	- Perform data preprocessing and normalization following the steps in [GeneRAIN] (https://github.com/suzheng/GeneRAIN)
 
 
 ## Train the Models
@@ -69,11 +68,10 @@ Once you have set up everything, you are ready to begin training the models. The
 - `--epoch_from`: Specifies the starting epoch number of training, beginning from 1. (Type: int, Default: None)
 - `--epoch_to`: Specifies the ending epoch number of training. (Type: int, Default: None)
 - `--exp_label`: Provides an experiment label for the output. (Type: str, Default: None)
-- Please note that, the dataset in the Zenodo repo was normalized by 'Binning-By-Gene' method, and it is only for training `GPT_Binning_By_Gene`, `BERT_Pred_Expr_Binning_By_Gene` and `BERT_Pred_Genes_Binning_By_Gene` models.
 
 ### Configuration via JSON File
 
-- All model and training hyperparameters are specified in a JSON file. Please find folders [`jsons`](jsons) for all the json files used for different GeneRAIN models. 
+- All model and training hyperparameters are specified in a JSON file. Please find files in folder [`jsons`](jsons) and the information in the table below for all the json files used for different models. 
 - The filename of this JSON configuration should be set in the environmental variable `PARAM_JSON_FILE`.
 
 | Experiment            | Experiment ID                              |
@@ -107,6 +105,20 @@ Once you have set up everything, you are ready to begin training the models. The
 - For detailed usage of Tensorboard, please refer to its [official website](https://www.tensorflow.org/tensorboard).
 
 Ensure that you have configured all necessary parameters and environment variables before initiating the training process.
+
+
+## Statistical analyses
+
+The following Jupyter notebooks detail the statistical analyses performed in our study, from data setup and embedding alignment to phenotype associations and model evaluations.
+
+- **[`prepare_data_scripts_for_MUSE.ipynb`](notebooks/anal/prepare_data_scripts_for_MUSE.ipynb):** Sets up data and scripts for aligning embeddings with MUSE.
+- **[`process_shared_emb_results.ipynb`](notebooks/anal/process_shared_emb_results.ipynb):** Generates similarity matrices from shared embedding alignment experiments, arranges data for MUSE supervised alignment, and produces a PCA plot for one of the experiments.
+- **[`anal_emb_from_MUSE.ipynb`](notebooks/anal/anal_emb_from_MUSE.ipynb):** Calculates ranks and similarities from MUSE embeddings and saves the findings in a pickle file.
+- **[`cmp_align_exps.ipynb`](notebooks/anal/cmp_align_exps.ipynb):** Compares results from various embedding alignment experiments.
+- **[`eval_simi_assoc.ipynb`](notebooks/anal/eval_simi_assoc.ipynb):** Analyzes associations between phenotypes, DNA features, and gene embeddings.
+- **[`anal_lncRNA_pseudo.ipynb`](notebooks/anal/anal_lncRNA_pseudo.ipynb):** Examines results from the protein-coding+lncRNAs+pseudogenes model.
+- **[`plot_loss_vs_epochs.ipynb`](notebooks/anal/plot_loss_vs_epochs.ipynb):** Plots training loss against epochs to visualize model performance.
+
 
 
 
