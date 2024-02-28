@@ -79,5 +79,8 @@
   "hm_simi_rank": "Human ortholog rank in mouse",
   "mh_simi_rank": "Mouse ortholog rank in human",
   "gene_class": "Gene class",
-  "simi_of_closest_gene": "Emb simi. of the closest gene"
+  "simi_of_closest_gene": "Emb simi. of the closest gene",
+  "GeneRAIN_RNA_simi": "GeneRAIN RNA simi.",
+  "Gene_mean_LECIF": "Gene LECIF",
+  "CDS_mean_LECIF": "CDS LECIF"
 }

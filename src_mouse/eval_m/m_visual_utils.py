@@ -15,6 +15,8 @@ from collections import Counter
 from scipy.stats import shapiro, pearsonr, spearmanr
 from scipy.stats import gaussian_kde
 from eval.visual_utils import FigureStyle
+
+
 def print_freq(iput_list):
     # Calculate frequencies
     frequency_counts = Counter(iput_list)
@@ -341,6 +343,7 @@ import matplotlib.gridspec as gridspec
 import pandas as pd
 from scipy import stats
 from scipy.stats import mannwhitneyu
+from scipy.stats import ks_2samp
 def add_significance_annotation(plot, 
                                 data, 
                                 x_var, 
@@ -382,8 +385,9 @@ def add_significance_annotation(plot,
             if pvals == None:
                 if use_wilcox_rank_sum_test:
                     statistic, p_value = mannwhitneyu(group1, group2)
+                    ks_statistic, ks_p_value = ks_2samp(group1, group2)
                     # Print the results
-                    print(f'Statistic: {statistic}, P-value: {p_value}')
+                    print(f'Statistic: {statistic}, P-value: {p_value}, KS-Statistic: {ks_statistic}, KS-P-value: {ks_p_value}')
 
                 else:
                     _, p_value = stats.ttest_ind(group1, group2)

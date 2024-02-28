@@ -25,6 +25,8 @@ Mean CDS length in human (bp): Average length of coding sequence of the human ge
 Mean CDS length in mouse (bp): Average length of coding sequence of the mouse gene, measured in base pairs (bp).
 Emb. simi. from Supervised align.: Embedding similarity derived from a supervised alignment method.
 Emb. simi. from GPT shared emb. + Supervised align.: Embedding similarity obtained from the GPT shared embedding + supervised alignment method.
+CDS LECIF score: average LECIF score for the gene (coding region)
+Gene LECIF score: average LECIF score for the gene (genic region)
 Group: Categorization of gene pairs based on DNA sequence similarity and RNA embedding similarity.
 Difference in transcript number between human and mouse genes: The numerical difference in the count of transcripts between human and mouse genes in each gene pair.
 Difference in transcript length between human and mouse genes (bp): The difference in the average transcript length between human and mouse genes, measured in base pairs (bp).
