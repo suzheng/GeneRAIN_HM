@@ -115,6 +115,7 @@ The following Jupyter notebooks detail the statistical analyses performed in our
 - **[`process_shared_emb_results.ipynb`](notebooks/anal/process_shared_emb_results.ipynb):** Generates similarity matrices from shared embedding alignment experiments, arranges data for MUSE supervised alignment, and produces a PCA plot for one of the experiments.
 - **[`anal_emb_from_MUSE.ipynb`](notebooks/anal/anal_emb_from_MUSE.ipynb):** Calculates ranks and similarities from MUSE embeddings and saves the findings in a pickle file.
 - **[`cmp_align_exps.ipynb`](notebooks/anal/cmp_align_exps.ipynb):** Compares results from various embedding alignment experiments.
+- **[`cal_LECIF_scores.ipynb`](notebooks/anal/cal_LECIF_scores.ipynb):** Calculate the LECIF scores for genes.
 - **[`eval_simi_assoc.ipynb`](notebooks/anal/eval_simi_assoc.ipynb):** Analyzes associations between phenotypes, DNA features, and gene embeddings.
 - **[`anal_lncRNA_pseudo.ipynb`](notebooks/anal/anal_lncRNA_pseudo.ipynb):** Examines results from the protein-coding+lncRNAs+pseudogenes model.
 - **[`plot_loss_vs_epochs.ipynb`](notebooks/anal/plot_loss_vs_epochs.ipynb):** Plots training loss against epochs to visualize model performance.
